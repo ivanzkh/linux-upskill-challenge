@@ -31,5 +31,9 @@ Provision a Linux virtual machine in the cloud and prepare it for remote Linux s
 ### Remote Access
 Connected to the server using SSH.
 
-```bash
-ssh username@public_ip
+
+## Evidence
+![Azure VM Overview](../screenshots/day-00-azure-vm.png)
+![SSH Login](../screenshots/day-00-ssh-login.png)
+
+
