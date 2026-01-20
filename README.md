@@ -14,5 +14,5 @@ Based on the Linux Upskill Challenge.
 - Access: SSH with key-based authentication
 
 ## Progress
-- Day 0: VM provisioning and initial access
+- Day 0: VM provisioning and SSH access
 - Day 1: Server basics
