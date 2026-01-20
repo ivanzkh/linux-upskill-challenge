@@ -1,2 +1,18 @@
-# linux-upskill-challenge
-Hands-on Linux sysadmin project based on Linux Upskill Challenge
+# Linux Upskill Challenge
+
+Hands-on Linux system administration project.
+Based on the Linux Upskill Challenge.
+
+## Goals
+- Build real Linux admin skills on a cloud VM
+- Practice SSH, networking, users, permissions, services
+- Document work clearly for portfolio use
+
+## Environment
+- Cloud provider: Azure
+- OS: Ubuntu Server LTS
+- Access: SSH with key-based authentication
+
+## Progress
+- Day 0: VM provisioning and initial access
+- Day 1: Server basics
