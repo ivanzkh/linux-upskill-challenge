@@ -1,0 +1,54 @@
+# Day 2 – Basic navigation and RTFM
+
+## Goal
+Build confidence navigating the Linux file system from the command line. Practice creating, moving, and deleting files and directories. Learn how to read and search command documentation using built in tools.
+
+## Environment
+- Local machine: macOS
+- Remote system: Ubuntu 24.04 LTS on Azure VM
+- Access method: SSH
+
+## Evidence (screenshots)
+- `day2-navigation-pwd-cd-ls.png`
+- `day2-mkdir-touch-mv-rm.png`
+- `day2-rtfm-man-apropos.png`
+
+## Tasks completed
+
+### 1. Navigate the file system
+
+pwd
+cd ~
+ls
+
+
+### 2. List directory contents
+
+ls
+ls -a
+
+### 3. Create files and directories
+
+mkdir test
+touch file
+
+
+### 4. Move, copy, and delete
+
+mv file test/
+cd test
+mv file my-first-file
+cp my-first-file my-second-file
+ls
+rm my-first-file
+cd ~
+rm -r test
+ls
+
+
+### 5. RTFM, manuals, and search
+
+man pwd
+apropos list
+
+
