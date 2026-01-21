@@ -16,3 +16,4 @@ Based on the Linux Upskill Challenge.
 ## Progress
 - Day 0: VM provisioning and SSH access
 - Day 1: Server basics
+- Day 2: Basic navigation
