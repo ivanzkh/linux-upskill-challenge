@@ -1,0 +1,217 @@
+# Day 03 – Power Trip (sudo and admin tasks)
+
+## Objective
+
+Learn how to perform administrative tasks safely using `sudo`.
+Avoid direct root usage.
+Understand the impact of global system changes.
+
+---
+
+## Environment
+
+* OS: Ubuntu 24.04.3 LTS
+* Cloud VM: Azure
+* User: `azureuser` (sudo enabled)
+* Login method: SSH key
+
+
+---
+
+## Tested File Permissions
+
+Checked permissions on a protected file:
+
+```bash
+ls -l /etc/shadow
+cat /etc/shadow
+```
+
+Result:
+
+* File owned by `root:shadow`
+* Access denied for regular user
+
+With sudo:
+
+```bash
+sudo cat /etc/shadow
+```
+
+Access granted.
+Confirms privilege escalation works as expected.
+
+---
+
+## Reboot Test with sudo
+
+Without sudo:
+
+```bash
+reboot
+```
+
+Result:
+
+* Operation denied
+* Interactive authentication required
+
+With sudo:
+
+```bash
+sudo reboot
+```
+
+System rebooted successfully.
+
+After reconnecting:
+
+```bash
+uptime
+```
+
+Result:
+
+* System uptime reset
+* Confirms full reboot occurred
+
+---
+
+## sudo Activity and Logs
+
+Reviewed sudo manual:
+
+```bash
+man sudo
+```
+
+Checked authentication logs:
+
+```bash
+less /var/log/auth.log
+grep "sudo" /var/log/auth.log
+```
+
+Observed:
+
+* sudo group assignment
+* Package installs via sudo
+* Access to `/etc/shadow`
+* System reboot via sudo
+
+---
+
+## Hostname Management
+
+Checked current hostname:
+
+```bash
+hostnamectl
+```
+
+Changed hostname:
+
+```bash
+sudo hostnamectl set-hostname Ivan
+```
+
+Verified change:
+
+```bash
+hostnamectl
+```
+
+Result:
+
+Static hostname updated to `Ivan`
+
+---
+
+## Timezone Configuration
+
+Checked current timezone:
+
+```bash
+timedatectl
+```
+
+Listed available timezones:
+
+```bash
+timedatectl list-timezones
+```
+
+Attempted without sudo:
+
+```bash
+timedatectl set-timezone America/Guayaquil
+```
+
+Result:
+
+* Authentication failure
+* Operation denied
+
+Applied change with sudo:
+
+```bash
+sudo timedatectl set-timezone America/Guayaquil
+```
+
+Verified:
+
+```bash
+timedatectl
+```
+
+Result:
+
+* Local time updated
+* Time zone set to `America/Guayaquil`
+
+---
+
+## Key Takeaways
+
+* Direct root usage is unnecessary and unsafe.
+* `sudo` provides controlled privilege escalation.
+* Every sudo action is logged.
+* Hostname and timezone changes affect the entire system.
+* Cloud systems require sudo even for basic admin tasks.
+
+---
+
+## Commands Used
+
+```bash
+whoami
+pwd
+ls -l /etc/shadow
+cat /etc/shadow
+sudo cat /etc/shadow
+reboot
+sudo reboot
+uptime
+man sudo
+less /var/log/auth.log
+grep "sudo" /var/log/auth.log
+hostnamectl
+sudo hostnamectl set-hostname Ivan
+timedatectl
+timedatectl list-timezones
+sudo timedatectl set-timezone America/Guayaquil
+```
+
+---
+
+Proof of Work
+  
+The following screenshots demonstrate completed tasks.
+day-03-01-shadow-permissions.png
+Shows denied access to /etc/shadow as regular user and successful access using sudo.
+day-03-02-sudo-reboot-uptime.png
+Shows reboot executed via sudo and uptime confirming system restart.
+day-03-03-sudo-auth-log.png
+Shows /var/log/auth.log entries for sudo usage, including reboot and privileged commands.
+day-03-04-hostname-timezone.png
+Shows hostname change using hostnamectl and timezone change using timedatectl.
