@@ -18,3 +18,4 @@ Based on the Linux Upskill Challenge.
 - Day 1: Server basics
 - Day 2: Basic navigation
 - Day 3: Power trip
+- Day 4: Installing Software and Exploring the File System
