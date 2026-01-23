@@ -19,3 +19,4 @@ Based on the Linux Upskill Challenge.
 - Day 2: Basic navigation
 - Day 3: Power trip
 - Day 4: Installing Software and Exploring the File System
+- Day 5: More, Less, History, and Dotfiles
